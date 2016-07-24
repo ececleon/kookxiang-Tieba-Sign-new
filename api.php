@@ -1,5 +1,6 @@
 <?php
 define('DISABLE_PLUGIN', true);
+define('DISABLE_CRON', true);
 require_once './system/common.inc.php';
 
 if(!$uid){

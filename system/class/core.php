@@ -4,6 +4,7 @@ class core {
 	function init() {
 		global $_config;
 		if(!$_config) require_once SYSTEM_ROOT.'./config.inc.php';
+		DEBUG::INIT();
 		$this->init_header();
 		$this->init_useragent();
 		CACHE::pre_fetch('setting', 'plugin', 'plugins');
@@ -72,7 +73,8 @@ class core {
 		HOOK::run('on_load');
 	}
 	function init_cron() {
-		if (!defined('ENABLE_CRON')) return;
+		//if (!defined('ENABLE_CRON')) return;
+		if (defined('DISABLE_CRON')) return;
 		$today = mktime(0, 0, 0);
 		$tomorrow = $today + 86400;
 		$nowtime = TIMESTAMP;

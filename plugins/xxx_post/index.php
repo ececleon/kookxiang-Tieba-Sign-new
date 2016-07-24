@@ -57,7 +57,7 @@ table.x_table thead tr{background-color:#dedede;}
 </style>
 
 <h2>客户端回帖</h2>
-<p class="small_gray">当前插件版本：0.3.1 | 更新日期：14-04-29 | Designed By <a href="http://tieba.baidu.com/home/main?un=%D0%C7%CF%D2%D1%A9&fr=index" target="_blank">@星弦雪</a></p>
+<p class="small_gray">当前插件版本：0.3.1 | 更新日期：14-04-29 | Designed By <a href="http://tieba.baidu.com/home/main?un=%D0%C7%CF%D2%D1%A9&fr=index" target="_blank">@星弦雪</a> | 修复 By 为你等多久（贴吧ID：甘心代替NI） 16-07-24</p>
 <p class="small_gray_i"><?php echo '——'.get_random_content();?>
 <div>
 	<ul class="nav-tabs">

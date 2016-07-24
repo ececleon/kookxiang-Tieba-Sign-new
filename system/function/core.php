@@ -179,7 +179,7 @@ function wrap_text($str) {
 }
 function get_cookie($uid){
 	static $cookie = array();
-	//if($cookie[$uid]) return $cookie[$uid];
+	if($cookie[$uid]) return $cookie[$uid];
 	$cookie[$uid] = DB::result_first("SELECT cookie FROM member_setting WHERE uid='{$uid}'");
 	$cookie[$uid] = strrev(str_rot13(pack('H*', $cookie[$uid])));
 	return $cookie[$uid];

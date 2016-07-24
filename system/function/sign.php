@@ -139,21 +139,85 @@ function _client_sign($uid, $tieba){
 	$matches=explode('=', $cookie);
 	$BDUSS = trim($matches[1]);
 	if(!$BDUSS) return array(-1, '找不到 BDUSS Cookie', 0);
+	
+	$fiddata=Array(
+'BDUSS='.$BDUSS,
+'_client_id=wappc_1469346572150_117',
+'_client_type=2',
+'_client_version=6.0.1',
+'_phone_imei=108178536318366',
+'cuid=CC24F1A42D35E0D1037F299BD9B665A6|663813635871801',
+'from=1012990k',
+'kw='.urldecode($tieba['unicode_name']),
+'model=GT-I9500',
+'pn=1',
+'q_type=2',
+'rn=35',
+'scr_dip=2.8125',
+'scr_h=1552',
+'scr_w=900',
+'stErrorNums=0',
+'stMethod=1',
+'stMode=1',
+//'stSize=1391',
+'stTime=170',
+'stTimesNum=0',
+'st_type=tb_forumlist',
+'timestamp='.time().'773',
+'with_group=1'
+);
+  $header2 = array ("Content-Type: application/x-www-form-urlencoded");
+	$data2=implode("&", $fiddata)."&sign=".strtoupper(md5(implode("", $fiddata)."tiebaclient!!!"));
+	$ch2 = curl_init();
+	curl_setopt($ch2, CURLOPT_URL, 'http://c.tieba.baidu.com/c/f/frs/page');
+	curl_setopt($ch2, CURLOPT_HTTPHEADER, $header2);
+	curl_setopt($ch2, CURLOPT_HEADER, 0);
+	curl_setopt($ch2, CURLOPT_POSTFIELDS, $data2);
+	curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch2, CURLOPT_CONNECTTIMEOUT, 10);
+	curl_setopt($ch2, CURLOPT_TIMEOUT, 30);
+	$gd2 = curl_exec($ch2);
+	curl_close($ch2);
+	$gd=json_decode($gd2);
+	$gd2='';
+	$tbs_tsgirl=$gd->anti->tbs;
+	$fid_tsgirl=$gd->forum->id;
+	$errid=$gd->error_code;
+	$signstate=$gd->forum->sign_in_info->user_info->is_sign_in;
+	if($errid!=0){
+	  if($errid==340001){
+	    return array(2, $errid.':'.$gd->error_msg, 0);
+	  }
+	return array(-1, $errid.':'.$gd->error_msg, 0);
+	}
+	if($signstate==1){
+	  return array(2, '这个吧已经签到过了！', 0);
+	}
 	$ch = curl_init('http://c.tieba.baidu.com/c/c/forum/sign');
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded', 'User-Agent: Mozilla/5.0 (SymbianOS/9.3; Series60/3.2 NokiaE72-1/021.021; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/525 (KHTML, like Gecko) Version/3.0 BrowserNG/7.1.16352'));
 	curl_setopt($ch, CURLOPT_COOKIE, $cookie);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_POST, 1);
 	$array = array(
-		'BDUSS' => $BDUSS,
-		'_client_id' => '03-00-DA-59-05-00-72-96-06-00-01-00-04-00-4C-43-01-00-34-F4-02-00-BC-25-09-00-4E-36',
-		'_client_type' => '4',
-		'_client_version' => '1.2.1.17',
-		'_phone_imei' => '540b43b59d21b7a4824e1fd31b08e9a6',
-		'fid' => $tieba['fid'],
+'BDUSS' => $BDUSS,
+		'_client_id' => 'wappc_138'.random(10, true).'_'.random(3, true),
+		'_client_type' => '2',
+		'_client_version' => '5.1.0',
+		'_phone_imei' => md5(random(15, true)),
+		'cuid' => strtoupper(md5(random(16))).'|'.random(15, true),
+		'fid' => $fid_tsgirl,
+		'from' => 'tieba',
 		'kw' => urldecode($tieba['unicode_name']),
+		'model' => 'H701',
 		'net_type' => '3',
-		'tbs' => get_tbs($uid),
+		'stErrorNums' => '0',
+		'stMethod' => '1',
+		'stMode' => '1',
+//		'stSize' => random(5, true),
+		'stTime' => random(4, true),
+		'stTimesNum' => '0',
+		'tbs' => $tbs_tsgirl,
+		'timestamp' => time().rand(1000, 9999),
 	);
 	$sign_str = '';
 	foreach($array as $k=>$v) $sign_str .= $k.'='.$v;

@@ -23,34 +23,34 @@ class plugin_xxx_post extends Plugin{
 		if (!in_array ( 'xxx_post_posts', $tables )){
 		runquery("
 			CREATE TABLE IF NOT EXISTS `xxx_post_posts` (
-				`sid` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
-				`uid` int(10) unsigned NOT NULL,
-				`fid` int(10) unsigned NOT NULL,
-				`tid` int(12) unsigned NOT NULL,
-				`name` varchar(127) NOT NULL,
-				`unicode_name` varchar(512) NOT NULL,
-				`post_name` varchar(127) NOT NULL
+				`sid` int(30) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+				`uid` int(30) unsigned NOT NULL,
+				`fid` int(30) unsigned NOT NULL,
+				`tid` text NOT NULL,
+				`name` text NOT NULL,
+				`unicode_name` text NOT NULL,
+				`post_name` text NOT NULL
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 			CREATE TABLE IF NOT EXISTS `xxx_post_setting` (
-				`uid` int(10) unsigned NOT NULL PRIMARY KEY,
+				`uid` int(30) unsigned NOT NULL PRIMARY KEY,
 				`client_type` tinyint(1) NOT NULL DEFAULT '5',
 				`frequency` tinyint(1) NOT NULL DEFAULT '2',
 				`delay` tinyint(2) NOT NULL DEFAULT '1',
-				`runtime` int(10) unsigned NOT NULL DEFAULT '0',
-				`runtimes` int(5) unsigned NOT NULL DEFAULT '6'
+				`runtime` int(30) unsigned NOT NULL DEFAULT '0',
+				`runtimes` int(30) unsigned NOT NULL DEFAULT '6'
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 			CREATE TABLE IF NOT EXISTS `xxx_post_content` (
-				`cid` int(10) unsigned AUTO_INCREMENT PRIMARY KEY,
-				`uid` int(10) unsigned NOT NULL,
-				`content` varchar(1024) NOT NULL
+				`cid` int(30) unsigned AUTO_INCREMENT PRIMARY KEY,
+				`uid` int(30) unsigned NOT NULL,
+				`content` text NOT NULL
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 			CREATE TABLE IF NOT EXISTS `xxx_post_log` (
-				`sid` int(10) unsigned NOT NULL,
-				`uid` int(10) unsigned NOT NULL,
-				`date` int(11) NOT NULL DEFAULT '0',
+				`sid` int(30) unsigned NOT NULL,
+				`uid` int(30) unsigned NOT NULL,
+				`date` int(30) NOT NULL DEFAULT '0',
 				`status` tinyint(4) NOT NULL DEFAULT '0',
 				`retry` tinyint(3) unsigned NOT NULL DEFAULT '0',
 				UNIQUE KEY `sid` (`sid`,`date`),
@@ -124,20 +124,20 @@ EOF;
 		switch ($_GET ['action']) {
 			case 'delsid' :
 				$_sid = intval ( $_GET ['sid'] );
-				DB::query ( "DELETE FROM xxx_post_posts WHERE sid='{$_sid}'" );
+				DB::query ( "DELETE FROM `xxx_post_posts` WHERE sid='{$_sid}'" );
 				$data ['msg'] = "删除成功";
 				break;
 			case 'del-all-tid' :
-				DB::query ( "DELETE FROM xxx_post_posts WHERE uid='{$uid}'" );
+				DB::query ( "DELETE FROM `xxx_post_posts` WHERE uid='{$uid}'" );
 				$data ['msg'] = "删除成功";
 				break;
 			case 'delcont' :
 				$cid = intval ( $_GET ['cid'] );
-				DB::query ( "DELETE FROM xxx_post_content WHERE cid='{$cid}'" );
+				DB::query ( "DELETE FROM `xxx_post_content` WHERE cid='{$cid}'" );
 				$data ['msg'] = "删除成功";
 				break;
 			case 'del-all-cont' :
-				DB::query ( "DELETE FROM xxx_post_content WHERE uid='{$uid}'" );
+				DB::query ( "DELETE FROM `xxx_post_content` WHERE uid='{$uid}'" );
 				$data ['msg'] = "删除成功";
 				break;
 			case 'set-content' :
@@ -180,15 +180,15 @@ EOF;
 				else if ($delay > 15)  $delay = 15;
 				if ($runtimes < 1)	$delay = 1;
 				else if ($runtimes > 6)  $delay = 6;
-				DB::query ( "replace into xxx_post_setting (uid,client_type,frequency,delay,runtimes) values($uid,$client_type,$frequency,$delay,$runtimes)" );
+				DB::query ( "replace into `xxx_post_setting` (uid,client_type,frequency,delay,runtimes) values($uid,$client_type,$frequency,$delay,$runtimes)" );
 				$data ['msg'] = "设置成功";
 				break;
 			case 'post-settings' :
-				$query = DB::query ( "SELECT * FROM xxx_post_posts WHERE uid='$uid'" );
+				$query = DB::query ( "SELECT * FROM `xxx_post_posts` WHERE uid='$uid'" );
 				while ( $result = DB::fetch ( $query ) ) {
 					$data ['tiebas'] [] = $result;
 				}
-				$query = DB::query ( "SELECT * FROM xxx_post_content WHERE uid='$uid'" );
+				$query = DB::query ( "SELECT * FROM `xxx_post_content` WHERE uid='$uid'" );
 				while ( $result = DB::fetch ( $query ) ) {
 					$data ['contents'] [] = $result;
 				}
@@ -196,12 +196,12 @@ EOF;
 				$data ['count2'] = count ( $data ['contents'] );
 				break;
 			case 'post-adv-settings' :
-				$query = DB::query ( "SELECT * FROM xxx_post_setting WHERE uid='$uid'" );
+				$query = DB::query ( "SELECT * FROM `xxx_post_setting` WHERE uid='$uid'" );
 				while ( $result = DB::fetch ( $query ) ) {
 					$data ['settings'] = $result;
 				}
 				if (! $data ['settings'] ['client_type']) {
-					DB::query ( "insert into xxx_post_setting set uid=$uid");
+					DB::query ( "insert into `xxx_post_setting` set uid='$uid'");
 					$data ['settings'] ['client_type'] = 5;
 					$data ['settings'] ['frequency'] = 2;
 					$data ['settings'] ['delay'] = 1;
@@ -210,26 +210,65 @@ EOF;
 				break;
 			case 'add-tieba' :
 				$tieba = $_POST ['xxx_post_add_tieba'];
-				$ch = curl_init ('http://tieba.baidu.com/f?kw='.urlencode(iconv("utf-8", "gbk", $tieba)).'&fr=index');
-				curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
-				$contents = curl_exec ( $ch );
-				curl_close ( $ch );
-				$fid = 0;
-				preg_match('/"forum_id"\s?:\s?(?<fid>\d+)/', $contents, $fids);
-				$fid = $fids ['fid'];
-				if ($fid == 0) {
-					$data ['msg'] = "添加失败，请检查贴吧名称并重试";
+				
+	$cookie = get_cookie ( $uid );
+	$matches=explode('=', $cookie);
+	//preg_match ( '/BDUSS=([^ ;]+);/i', $cookie, $matches );
+	$BDUSS = trim ( $matches [1] );
+$fiddata=Array(
+'BDUSS='.$BDUSS,
+'_client_id=wappc_1469346572150_117',
+'_client_type=2',
+'_client_version=6.0.1',
+'_phone_imei=108178536318366',
+'cuid=CC24F1A42D35E0D1037F299BD9B665A6|663813635871801',
+'from=1012990k',
+'kw='.$tieba,
+'model=GT-I9500',
+'pn=1',
+'q_type=2',
+'rn=35',
+'scr_dip=2.8125',
+'scr_h=1552',
+'scr_w=900',
+'stErrorNums=0',
+'stMethod=1',
+'stMode=1',
+//'stSize=1391',
+'stTime=170',
+'stTimesNum=0',
+'st_type=tb_forumlist',
+'timestamp='.time().'773',
+'with_group=1'
+);
+  $header2 = array ("Content-Type: application/x-www-form-urlencoded");
+	$data2=implode("&", $fiddata)."&sign=".strtoupper(md5(implode("", $fiddata)."tiebaclient!!!"));
+	$ch2 = curl_init();
+	curl_setopt($ch2, CURLOPT_URL, 'http://c.tieba.baidu.com/c/f/frs/page');
+	curl_setopt($ch2, CURLOPT_HTTPHEADER, $header2);
+	curl_setopt($ch2, CURLOPT_HEADER, 0);
+	curl_setopt($ch2, CURLOPT_POSTFIELDS, $data2);
+	curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch2, CURLOPT_CONNECTTIMEOUT, 10);
+	curl_setopt($ch2, CURLOPT_TIMEOUT, 30);
+	$gd2 = curl_exec($ch2);
+	curl_close($ch2);
+	$gd = json_decode($gd2);			
+	$forumname = $gd->forum->name;
+				if ($gd->error_code != 0) {
+					//$data ['msg'] = "添加失败(".$gd->error_code.":".$gd->error_msg.")，调试信息：[".$data2."] ".$gd2;
+					$data ['msg'] = "添加失败(".$gd->error_code.":".$gd->error_msg.")";
 					$data ['msgx'] = 0;
 					break;
 				}
-				preg_match ( '/fname="(.+?)"/', $contents, $fnames );
-				$unicode_name = urlencode($fnames [1]);
-				$fname = $fnames [1];
+				//preg_match ( '/fname="(.+?)"/', $contents, $fnames );
+				$unicode_name = urlencode($forumname);
+				//$fname = $fnames [1];
 				DB::insert ( 'xxx_post_posts', array (
 					'uid' => $uid,
 					'fid' => $fid,
-					'tid' => 0,
-					'name' => $fname,
+					'tid' => '0',
+					'name' => $forumname,
 					'unicode_name' => $unicode_name,
 					'post_name' =>'随机'
 				) );
@@ -239,23 +278,48 @@ EOF;
 				$tieurl = $_POST ['xxx_post_tid'];
 				preg_match ( '/tieba\.baidu\.com\/p\/(?<tid>\d+)/', $tieurl, $tids );
 				$tid=$tids ['tid'];
-				$ch = curl_init ('http://tieba.baidu.com/p/'.$tid);
-				curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
-				$contents = curl_exec ( $ch );
-				curl_close ( $ch );
-				$fid = 0;
-				preg_match ( '/"forum_id"\s?:\s?(?<fid>\d+)/', $contents, $fids );
-				$fid =$fids ['fid'];
-				if ($fid == 0) {
-					$data ['msg'] = "添加失败，请检查帖子地址并重试";
-					$data ['msgx'] = 0;
+				//=============
+					$cookie = get_cookie ( $uid );
+	$matches=explode('=', $cookie);
+	//preg_match ( '/BDUSS=([^ ;]+);/i', $cookie, $matches );
+	$BDUSS = trim ( $matches [1] );
+				$pd=array(
+		"BDUSS=".$BDUSS,
+		"_client_id=wappc_1392988837347_728",
+		"_client_type=2",
+		"_client_version=5.5.2",
+		"_phone_imei=862040020613926",
+		"back=0",
+		"kz=".$tid,
+		"net_type=3",
+		"pn=1",
+		"rn=2",
+		"with_floor=1",
+		);
+	//$gd=curl_post($pd,'http://c.tieba.baidu.com/c/f/pb/page');
+	$header2 = array ("Content-Type: application/x-www-form-urlencoded");
+	$data2=implode("&", $pd)."&sign=".md5(implode("", $pd)."tiebaclient!!!");
+	$ch2 = curl_init();
+	curl_setopt($ch2, CURLOPT_URL, 'http://c.tieba.baidu.com/c/f/pb/page');
+	curl_setopt($ch2, CURLOPT_HTTPHEADER, $header2);
+	curl_setopt($ch2, CURLOPT_HEADER, 0);
+	curl_setopt($ch2, CURLOPT_POSTFIELDS, $data2);
+	curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch2, CURLOPT_CONNECTTIMEOUT, 10);
+	curl_setopt($ch2, CURLOPT_TIMEOUT, 30);
+	$gd2 = curl_exec($ch2);
+	curl_close($ch2);
+	$gd = json_decode($gd2);
+	if($gd->error_code!=0){
+					$data ['msg'] = "添加失败";
 					break;
-				}
-				preg_match ( '/fname="(.+?)"/', $contents, $fnames );
-				$unicode_name = urlencode($fnames [1]);
-				$fname = $fnames [1];
-				preg_match ( '/title:"(.*?)"/', $contents, $post_names );
-				$post_name = $post_names [1];
+	}
+				//=============
+	//$tbs_tsgirl=$gd->anti->tbs;
+	$fid=$gd->forum->id;
+	$fname=$gd->forum->name;
+	$unicode_name=urlencode($fname);
+	$post_name=$gd->thread->title;
 				DB::insert ( 'xxx_post_posts', array (
 						'uid' => $uid,
 						'fid' => $fid,
@@ -268,16 +332,16 @@ EOF;
 				break;
 			case 'test_post' :
 				include 'plugins/xxx_post/core.php';
-				$tiezi_count = DB::result_first ( "SELECT COUNT(*) FROM xxx_post_posts WHERE uid='$uid'" );
+				$tiezi_count = DB::result_first ( "SELECT COUNT(*) FROM `xxx_post_posts` WHERE uid='$uid'" );
 				$tiezi_offset = rand(1, $tiezi_count) - 1;
-				$tiezi=DB::fetch_first ( "SELECT * FROM xxx_post_posts WHERE uid='$uid' limit $tiezi_offset,1" );
+				$tiezi=DB::fetch_first ( "SELECT * FROM `xxx_post_posts` WHERE uid='$uid' limit $tiezi_offset,1" );
 				if (! $tiezi) showmessage ('没有添加帖子，请先添加！');
-				$x_content_count = DB::result_first("SELECT COUNT(*) FROM xxx_post_content WHERE uid='$uid'");
+				$x_content_count = DB::result_first("SELECT COUNT(*) FROM `xxx_post_content` WHERE uid='$uid'");
 				$x_content_offset = rand(1, $x_content_count) - 1;
-				$x_content = DB::result_first("SELECT content FROM xxx_post_content WHERE uid='$uid' limit $x_content_offset,1");
+				$x_content = DB::result_first("SELECT content FROM `xxx_post_content` WHERE uid='$uid' limit $x_content_offset,1");
 				list ( $status, $result ) = client_rppost ( $uid, $tiezi, $x_content);
 				$status = $status == 2 ? '发帖成功' : '发帖失败';
-				showmessage ( "<p>测试帖子：【{$tiezi[name]}吧】{$tiezi[post_name]}</p><p>测试结果：{$status}</p><p>详细信息：{$result}</p>" );
+				showmessage ( "<p>测试帖子：【{$tiezi[name]}吧】{$tiezi[name]}，tid={$tiezi[tid]}</p><p>测试结果：{$status}</p><p>详细信息：{$result}</p>" );
 				break;
 			case 'post-log' :
 				$date = date ( 'Ymd' );
@@ -288,14 +352,14 @@ EOF;
 					$data ['date'] = substr ( $date, 0, 4 ) . '-' . substr ( $date, 4, 2 ) . '-' . substr ( $date, 6, 2 );
 				}
 				$data ['log'] = array ();
-				$query = DB::query ( "SELECT * FROM xxx_post_log l LEFT JOIN xxx_post_posts t ON t.sid=l.sid WHERE l.uid='$uid' AND l.date='$date'" );
+				$query = DB::query ( "SELECT * FROM `xxx_post_log` l LEFT JOIN `xxx_post_posts` t ON t.sid=l.sid WHERE l.uid='$uid' AND l.date='$date'" );
 				while ( $result = DB::fetch ( $query ) ) {
 					if (! $result ['sid']) continue;
 					$data ['log'] [] = $result;
 				}
 				$data ['count'] = count ( $data ['log'] );
-				$data ['before_date'] = DB::result_first ( "SELECT date FROM xxx_post_log WHERE uid='{$uid}' AND date<'{$date}' ORDER BY date DESC LIMIT 0,1" );
-				$data ['after_date'] = DB::result_first ( "SELECT date FROM xxx_post_log WHERE uid='{$uid}' AND date>'{$date}' ORDER BY date ASC LIMIT 0,1" );
+				$data ['before_date'] = DB::result_first ( "SELECT date FROM `xxx_post_log` WHERE uid='{$uid}' AND date<'{$date}' ORDER BY date DESC LIMIT 0,1" );
+				$data ['after_date'] = DB::result_first ( "SELECT date FROM `xxx_post_log` WHERE uid='{$uid}' AND date>'{$date}' ORDER BY date ASC LIMIT 0,1" );
 				break;
 		}
 		echo json_encode ( $data );

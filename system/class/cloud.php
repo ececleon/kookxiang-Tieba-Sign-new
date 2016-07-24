@@ -2,9 +2,15 @@
 if (!defined('IN_KKFRAME')) exit();
 
 class cloud {
+  
 	const API_ROOT = 'http://tsgirl-tsgirl.rhcloud.com/v2/';
 	const API_ROOT_HTTPS = 'https://tsgirl-tsgirl.rhcloud.com/v2/';
 	const API_ROOT_SAE = 'https://tsgirl-tsgirl.rhcloud.com/v2/';
+	/*
+  const API_ROOT = 'http://kk.weizhichahui.win/v2/';
+	const API_ROOT_HTTPS = 'https://kk.weizhichahui.win/v2/';
+	const API_ROOT_SAE = 'https://kk.weizhichahui.win/v2/';
+	*/
 	public static function init(){
 		list($id, $key) = self::_get_id_and_key();
 		if (!$id || !$key) define('CLOUD_NOT_INITED', true);

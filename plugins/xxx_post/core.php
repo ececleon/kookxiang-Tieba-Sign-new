@@ -7,7 +7,6 @@ function get_random_content(){
 如果觉得生活是一种刁难，一开始就输了。如果觉得刁难是一种雕刻，迟早都会赢的。
 你不可能经由一个没有喜悦的旅程，而达到一个喜悦的终点。不管此刻，你追求的是什么，希望你能在过程中保持一颗喜悦的心，那么你所向往的东西，就会更不费力地来到你的生命中。
 为了爱，失恋是必要的；为了光明，黑暗是必要的。
-好夫妻的十大经典表现：恋爱时，彼此是崇拜者；交谈时，彼此是知音；得意时，彼此是吹牛对象；生气时，彼此是出气筒；困难时，彼此是咨询师；痛苦时，彼此是安慰者；病时，彼此是护理；老时，彼此是拐杖；平时，彼此各干各，保持适度距离。
 你超过别人一点点，别人会嫉妒你；当你超过别人一大截，别人就会羡慕你。
 当你了解人性，你也许就能够原谅所有的自私和软弱、所有的谎言与背叛。弗洛依德说，人的内心，既求生，也求死。我们追逐光明，却也追逐黑暗，我们那么想要得到爱，有时候却又近乎自毁地浪掷手中的爱……人心中似乎一直也有一片荒芜的夜地，留给那个寂寞也幽暗的自我。——杨澜
 有些事，我们总是弄不懂；有些人，我们总是猜不透；有些道，我们总是悟不尽；有些理，我们总是想不通；有些坎，我们总是跨不过；有些伤，我们总是治不好；有些天，我们总是睡不着；有些情，我们总是说不出；有些爱，我们总是得不到。对不起，那些回不去的曾经。
@@ -76,17 +75,13 @@ function get_random_content(){
 别让自己活得太累。应该学着想开、看淡，学着不强求，学着深藏。适时放松自己，寻找宣泄，给疲惫的心灵解解压。人之所以会烦恼，就是记性太好，记住了那些不该记住的东西。所以，记住快乐的事，忘记令你悲伤的事。
 不论你生活在何处，和爱遇见了，就打个招呼；相逢了，就给个拥抱；分手了，就说句再见。不纠缠，不厌世，不对爱情恶言相向。
 我们因彼此懂得而惺惺相惜；我们因惺惺相惜而心念相应；我们因心念相应而无视距离。我们不能没有期望，没有梦想，没有依托；我们也不能没有朋友，没有理解，没有认同，总是一个人走过漫漫的人生苦旅。不管我们相隔多远，我们都能感到彼此的每一次心跳，我们用心和微笑把彼此的距离拉到最近
-小的时候，每个孩子都会给父母许下诺言：长大了，我要带你们如何如何……渐渐长大了，渐渐离父母越来越远，渐渐忙得喘不过气了……忽然有一日，恍过神来，发现父母已是满头银发。他们的腰被岁月压弯了；他们脚步蹒跚，再也不能随你去看山望水；他们甚至失去记忆，再也听不清你说的那些甜言蜜语……
 有时候你必须跳出“窗外”，然后在坠落的过程中长出“翅膀”。
 宝贝，请记住：你必须坚强，没有人会懂得你到底有多痛。你必须坚强，没有人会懂你到底要怎么继续生活下去。你必须坚强，没有人知道你经历了怎么样的生活。你必须坚强，没有人知道你微笑背后所隐藏的伤痛。你必须坚强，没有人知道你在想哭的时候却发现原来早已没有了眼泪。你若不坚强，谁替你勇敢。
 一个人久了，对爱情会越挑剔；一个人久了，会变的比恋爱时候成熟；一个人久了，朋友会越重要；一个人久了，会越来越喜欢听歌；一个人久了，对节日大多没啥期待。一个人久了，因为怕伤害，懒得去恋爱，懒得去了解人。
 真心怀念高中了。每天穿着校服到处乱蹭。男生上课用手机看文字直播的NBA。下课走廊里闹哄哄的。厕所也要排队。最恨老师抱着卷子进班。有总是第一的书呆子也有隐藏在最后一排的神吐槽的大神。我也怀念那时候的我。因为一切都看起来那么有希望。好像只要努力，什么都能改变
 生命本是一次旅行，在每一次停泊时都要清理自己的口袋，把更多的位置空出来，让自己活得更轻松、更自在。心无杂物，才会有满心室的暖暖阳光，才会有从容生活轻松涉世的自信和勇气。只有拥有一颗空灵的心，才能注入快乐，注入幸福。
 现在要一份纯粹的爱情，很难。放不下骄傲，放不下身段，参杂太多人太多事，彼此撑着，最后以“爱不起”、“不适合”收场。陪我们走到最后的人，也许算不上是我们最爱的，但会是最合适的。这样也很好，不是吗？人生本不完美，也许懂得知足。年轻就是这样，有错过有遗憾，最后才会学着珍惜
-爱情里最忌讳的就是：两人都幻想着彼此的未来，却也总惦记着对方的过去。
-伤心最大的建设性，在于明白，那颗心还在老地方。
-深的话要浅浅地说，长长的路要挥霍地走。大大的世界要率真地感受，会痛的伤口要轻轻地揉。
-《老男孩》和《那些年我们一起追过的女孩》告诉我们一个事实：也许现在你们很相爱，但是如果你们现在不努力的话，到最后陪她结婚的人一定不是你！现实并不残酷，残酷的是你自己对青春的挥霍！以后的结果都是由你自己制造的，爱一个人不是每天的甜言蜜语，而是每天的发奋图强！
+暂时的无知并不可怕，可怕的是不知道自己有多无知，长期的自以为是，自以为知道的够多……
 有时候，你难免多心。心眼一多，许多小事就跟着过敏，于是别人多看你一眼，你便觉得他对你有敌意；少看你一眼，你又认定他故意对你冷落。多心的人注定活得辛苦，因为太容易被别人的情绪所左右。多心的人总是胡思乱想，结果是困在一团乱麻般的思绪中，动弹不得。有时候，与其多心，不如少根筋。
 第一次的爱，始终无法轻描淡写。我对你，只有放弃，没有忘记。站在心碎的地方，轻轻打一个结，一种缝补，阻止伤痛再流出。在这个城市，做一道路过的风景，做一次匆匆的过客，只为了一个人。也许有一天，你回头了，而我却早已，不在那个路口。
 即使不见面，不说话，不发信息，我也会在心里留一个位置，安安稳稳的放着一个人。
@@ -97,9 +92,12 @@ function get_random_content(){
 有时候，你爱上的那个人，是会完全打破你一直以来的标准。从世俗的眼光看来，他也许不是那么标准；然而，乍然相逢的一刻，他翩翩的身影却在你眼里开出了翻翻腾腾的花。突然之间，世间的标准都可以抛弃，他凌驾了一切的标准。
 不要因为害怕彼此离开而体谅。体谅是因为爱，而不是因为恐惧。爱是一种责任，不可以轻易的离开。让你为离开而恐惧的人，算不上爱人，就算付出再多，要离开的人，终究是会离开。
 忘了有多久，习惯对朋友说都好都好，却对陌生人坦白自己的心事。
+你真的知道么？没有尝试过，体验过，失败过，成功过，都只能算听说。
+其实世人都是很可爱的，多数人只会关注你是否已经成功，没有人会介意你曾经失败，那自己也无需关注曾经失败，只要关注现在如何成功。
 人生就像一杯没有加糖的咖啡，喝起来是苦涩的，回味起来却有久久不会退去的余香；人生就是一场旅行，不在乎目的地，在乎的是沿途的风景以及看风景的心情；人生就是一条坎坷曲折的路，即使不断的跌倒，也一定要爬起来，坚持自己的梦想。记住，这一秒不放弃，下一秒就会有希望。
 一句我等你，不知道需要多大的勇气。它远比我爱你三个字，更需要勇气。不是每个人你都愿意等待，也不是所有人都值得你去等待。一句我等你，包含了很多的无奈，心酸，苦涩。或许是爱不到，或许是不能爱，无论怎样，我等你这个承诺，远比我爱你更动听。可是，有多少的爱情经得起等待？
 做一个安静细微的人，于角落里自在开放，默默悦人，却始终不引起过分热闹的关注，保有独立而随意的品格，这就很好。
+那个位置已经空缺了26年，不在乎多等几年，若有人问我为什么从没谈过恋爱，我想说，以前是巧合，现在是有原因。现在的我只会选择那个能让我甘愿付出，尽心尽力的那一个人；如果不能选择最爱，人生又有什么意思？敷衍，只是害人害己。
 过去的事，不后悔；将来的事，不害怕。对于那些应经发生的事，要坦然接受，无论它对你产生的不利影响有多大，它都已经发生了。人生是一场一个人的旅程，无人可替代。总有人离开，总有人到来。
 EOF;
 	$contents=explode("\n", $text);
@@ -107,62 +105,146 @@ EOF;
 	return $content;
 }
 
-function get_random_tid($tieba){
-	$ch = curl_init ('http://tieba.baidu.com/f?kw='.urlencode(iconv('utf-8', 'gbk', $tieba)).'&fr=index');
-	curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
-	$contents = curl_exec ( $ch );
-	curl_close ( $ch );
-	preg_match_all('/<li class="j_thread_list[A-z0-9 -_]+" +data-field=\'{(?<json>[A-z0-9 -_]+?)}\'/', $contents, $jsontids);
-	foreach ($jsontids['json'] as $jsontid){
-		$jsontid=str_replace('&quot;','"', '{'.$jsontid.'}');
-		if($tids[]=json_decode($jsontid)->is_top == 0)
-		   $tids[]=json_decode($jsontid)->id;
+function get_random_tid($tieba,$BDUSS){
+$fiddata=Array(
+'BDUSS='.$BDUSS,
+'_client_id=wappc_1469346572150_117',
+'_client_type=2',
+'_client_version=6.0.1',
+'_phone_imei=108178536318366',
+'cuid=CC24F1A42D35E0D1037F299BD9B665A6|663813635871801',
+'from=1012990k',
+'kw='.$tieba,
+'model=GT-I9500',
+'pn=1',
+'q_type=2',
+'rn=35',
+'scr_dip=2.8125',
+'scr_h=1552',
+'scr_w=900',
+'stErrorNums=0',
+'stMethod=1',
+'stMode=1',
+//'stSize=1391',
+'stTime=170',
+'stTimesNum=0',
+'st_type=tb_forumlist',
+'timestamp='.time().'773',
+'with_group=1'
+);
+  $header2 = array ("Content-Type: application/x-www-form-urlencoded");
+	$data2=implode("&", $fiddata)."&sign=".strtoupper(md5(implode("", $fiddata)."tiebaclient!!!"));
+	$ch2 = curl_init();
+	curl_setopt($ch2, CURLOPT_URL, 'http://c.tieba.baidu.com/c/f/frs/page');
+	curl_setopt($ch2, CURLOPT_HTTPHEADER, $header2);
+	curl_setopt($ch2, CURLOPT_HEADER, 0);
+	curl_setopt($ch2, CURLOPT_POSTFIELDS, $data2);
+	curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch2, CURLOPT_CONNECTTIMEOUT, 10);
+	curl_setopt($ch2, CURLOPT_TIMEOUT, 30);
+	$gd2 = curl_exec($ch2);
+	curl_close($ch2);
+	$gd=json_decode($gd2);
+	$gd2='';
+	if($gd->error_code!=0){
+	    return ('0');
 	}
-	$tid=$tids[rand(0,count($tids)-1)];
-	return $tid;
+	$alltid=$gd->forum->tids;
+	$tids=explode(',', $alltid);
+	$tid20=$tids[rand(2,sizeof($tids)-2)];
+  return $tid20;
 }
 
 
 function client_rppost($uid, $tieba, $content) {
 	$cookie = get_cookie ( $uid );
-	preg_match ( '/BDUSS=([^ ;]+);/i', $cookie, $matches );
+	$matches=explode('=', $cookie);
+	//preg_match ( '/BDUSS=([^ ;]+);/i', $cookie, $matches );
 	$BDUSS = trim ( $matches [1] );
 	$setting = DB::fetch_first ( "SELECT * FROM xxx_post_setting WHERE uid='{$uid}'" );
 	if ($setting ['client_type'] == 5)
-		$setting ['client_type'] = rand ( 1, 4 );
+		$setting ['client_type'] = rand ( 1, 3 );
 	if (! $BDUSS) return array (- 1,'找不到 BDUSS Cookie' );
 	if (! $content) $content=get_random_content();
-	if (! $tieba['tid']) $tieba['tid']=get_random_tid($tieba ['name']);
-	$formdata = array (
-			'BDUSS' => $BDUSS,
-			'_client_id' => 'wappc_136' . random ( 10, true ) . '_' . random ( 3, true ),
-			'_client_type' => $setting ['client_type'],
-			'_client_version' => '5.0.0',
-			'_phone_imei' => md5 ( random ( 16 ) ),
-			'anonymous' => 0,
-			'content' => $content,
-			'fid' => $tieba ['fid'],
-			'kw' => urldecode ( $tieba ['name'] ),
-			'net_type' => 3,
-			'tbs' => get_tbs ( $tieba ['uid'] ),
-			'tid' => $tieba ['tid'],
-			'title' => ""
-	);
-	$adddata = '';
-	foreach ( $formdata as $k => $v )
-		$adddata .= $k . '=' . $v;
-	$sign = strtoupper ( md5 ( $adddata . 'tiebaclient!!!' ) );
-	$formdata ['sign'] = $sign;
-	$ch = curl_init ( 'http://c.tieba.baidu.com/c/c/post/add' );
-	curl_setopt ( $ch, CURLOPT_HTTPHEADER, array (
+	$tid200=$tieba[tid];
+	if ($tieba[tid]=='0'||$tieba[tid]==''){
+	  $tid200=get_random_tid($tieba[name],$BDUSS);
+	  if($tid200=='0'){
+	    //return array (0,'获取帖子信息失败('.$gd->error_code.':'.$gd->error_msg.")，调试信息：['.$data2.'],'.$gd2);
+	    return array (0,'取 '.$tieba[name].'吧 帖子列表失败(tid return 0)');
+	  }
+	  if($tid200==''){
+	    //return array (0,'获取帖子信息失败('.$gd->error_code.':'.$gd->error_msg.")，调试信息：['.$data2.'],'.$gd2);
+	    return array (0,'取 '.$tieba[name].'吧 帖子列表失败(tid return null)');
+	  }
+	}
+	//return array (0,'tid is '.$tid200);
+
+	//======get TBS=======
+	$pd=array(
+		"BDUSS=".$BDUSS,
+		"_client_id=wappc_1392988837347_728",
+		"_client_type=2",
+		"_client_version=5.5.2",
+		"_phone_imei=862040020613926",
+		"back=0",
+		"kz=".$tid200,
+		"net_type=3",
+		"pn=1",
+		"rn=2",
+		"with_floor=1",
+		);
+	//$gd=curl_post($pd,'http://c.tieba.baidu.com/c/f/pb/page');
+	$header2 = array ("Content-Type: application/x-www-form-urlencoded");
+	$data2=implode("&", $pd)."&sign=".strtoupper(md5(implode("", $pd)."tiebaclient!!!"));
+	$ch2 = curl_init();
+	curl_setopt($ch2, CURLOPT_URL, 'http://c.tieba.baidu.com/c/f/pb/page');
+	curl_setopt($ch2, CURLOPT_HTTPHEADER, $header2);
+	curl_setopt($ch2, CURLOPT_HEADER, 0);
+	curl_setopt($ch2, CURLOPT_POSTFIELDS, $data2);
+	curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch2, CURLOPT_CONNECTTIMEOUT, 10);
+	curl_setopt($ch2, CURLOPT_TIMEOUT, 30);
+	$gd2 = curl_exec($ch2);
+	curl_close($ch2);
+	$gd = json_decode($gd2);
+	if($gd->error_code!=0){
+	    return array (0,'获取帖子信息失败('.$gd->error_code.':'.$gd->error_msg.')，调试信息：['.$data2.'],'.$gd2);
+	    //return array (0,'获取帖子信息失败('.$gd->error_code.':'.$gd->error_msg.')');
+	}
+	$tbs_tsgirl=$gd->anti->tbs;
+	$fid_tsgirl=$gd->forum->id;
+	$kw_tsgirl=$gd->forum->name;
+	//$title=$gd->thread->title;
+	//====================
+	$formdata = array(
+		"BDUSS=".$BDUSS,
+		"_client_id=wappc_1392988837347_728",
+		"_client_type=".$setting ['client_type'],
+		"_client_version=5.5.2",
+//		"_phone_imei=261740086136545",
+		"_phone_imei=862040020613926",
+		'anonymous=0',
+		'content='.$content,
+		'fid='.$fid_tsgirl,
+		"kw=".$kw_tsgirl,
+		"net_type=3",
+		'tbs='.$tbs_tsgirl,
+		'tid='.$tid200,
+		'title='
+  );
+	$data3=implode("&", $formdata)."&sign=".strtoupper(md5(implode("", $formdata)."tiebaclient!!!"));
+	$ch3 = curl_init ( 'http://c.tieba.baidu.com/c/c/post/add' );
+	curl_setopt ( $ch3, CURLOPT_HTTPHEADER, array (
 			'Content-Type: application/x-www-form-urlencoded'
 	) );
-	curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, true );
-	curl_setopt ( $ch, CURLOPT_COOKIE, $cookie );
-	curl_setopt ( $ch, CURLOPT_POST, true );
-	curl_setopt ( $ch, CURLOPT_POSTFIELDS, http_build_query ( $formdata ) );
-	$re = @json_decode ( curl_exec ( $ch ), ture );
-	curl_close ( $ch );
+	curl_setopt ( $ch3, CURLOPT_RETURNTRANSFER, true );
+	curl_setopt ( $ch3, CURLOPT_COOKIE, $cookie );
+	curl_setopt ( $ch3, CURLOPT_POST, true );
+	curl_setopt ( $ch3, CURLOPT_POSTFIELDS, $data3);
+	$re2 = curl_exec ( $ch3 );
+	curl_close ( $ch3 );
+	$re=json_decode($re2);
 	switch ($setting ['client_type']) {
 		case '1' :
 			$client_res = "iphone";
@@ -178,11 +260,11 @@ function client_rppost($uid, $tieba, $content) {
 			break;
 	}
 	if (!$re) return array (0,'JSON 解析错误' );
-	if ($re ['error_code'] == 0) return array (2,"使用" . $client_res . '客户端发帖成功，<a href="http://tieba.baidu.com/p/' . $tieba ['tid'] . '" target="_blank">查看帖子</a>');
-	else if ($re ['error_code'] == 5) return array (5,"需要输入验证码，请检查你是否已经关注该贴吧。" 	);
-	else if ($re ['error_code'] == 7) return array (7,"您的操作太频繁了！" );
-	else if ($re ['error_code'] == 8) return array (8,"您已经被封禁" );
-	else return array($re ['error_code'],"未知错误，错误代码：" . $re ['error_code']);
+	if ($re->error_code == 0){
+	    return array (2,"使用" . $client_res . '客户端发帖成功，<a href="http://tieba.baidu.com/p/' . $tieba ['tid'] . '" target="_blank">查看帖子</a>');
+	}else{
+	    return array($re->error_code,$re->error_code.":" . $re->error_msg);
+	}
 }
 
 ?>
